@@ -1,5 +1,18 @@
 package countmeup;
 
+/* 
+ * Class candidate
+ * Attributes: 	
+ * 			Unique identifier and number of votes.
+ * Methods:	
+ * 			Constructor - Sets the unique identifier
+ * 			and his votes to zero. 
+ * 				
+ * 			GetNumberOfVotes - Returns number of votes
+ * 			the candidate has.
+ * 
+ *   		addVote - Adds a vote to the candidate's votes
+ */
 public class Candidate {
 	int candidateId;
 	int numberOfVotes;
@@ -13,7 +26,7 @@ public class Candidate {
 		return numberOfVotes;
 	}
 	
-	void voteFor () {
+	void addVote () {
 		numberOfVotes = numberOfVotes + 1;
 	}
 }
