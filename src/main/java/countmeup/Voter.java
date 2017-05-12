@@ -28,7 +28,7 @@ public class Voter {
 	
 	boolean canVote () {
 		
-		return  votesCasted <= 3 ? true : false;
+		return  votesCasted < 3 ? true : false;
 		
 	}
 	
