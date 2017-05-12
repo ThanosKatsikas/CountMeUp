@@ -14,8 +14,8 @@ package countmeup;
  *   		addVote - Adds a vote to the candidate's votes
  */
 public class Candidate {
-	int candidateId;
-	int numberOfVotes;
+	private final int candidateId;
+	private int numberOfVotes;
 	
 	Candidate (int id) {
 		candidateId = id;

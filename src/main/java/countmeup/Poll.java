@@ -27,7 +27,6 @@ public class Poll {
 			return true;
 		}
 		return false;
-		
 	}
 		
 	void getResults () {}

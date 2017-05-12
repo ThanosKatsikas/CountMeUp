@@ -14,9 +14,7 @@ public class CountMeUpServiceImpl implements CountMeUpService{
 	public ResponseEntity<Void> doVote(int voterId, int candidateId) {
 		HttpHeaders headers = new HttpHeaders();
 		
-		if (poll.castVote(voterId, candidateId) ) 
-		{
-			System.out.println("GOT ONE!!!");
+		if (poll.castVote(voterId, candidateId) ) {
 			return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
 		}
 		
@@ -26,7 +24,6 @@ public class CountMeUpServiceImpl implements CountMeUpService{
 	@Override
 	public void doResults() {
 		// TODO Auto-generated method stub
-		
 	} 
 
 

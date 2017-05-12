@@ -13,23 +13,20 @@ package countmeup;
  * 				voted 
  */
 public class Voter {
-	int voterId;
-	int votesCasted;
+	private final int voterId;
+	private int votesCasted;
 	
 	Voter (int id) {
 		voterId = id;
 		votesCasted = 0;
 	}
 	
-	int getNumberOfVotes ()
-	{
+	int getNumberOfVotes () {
 		return votesCasted;
 	}
 	
 	boolean canVote () {
-		
 		return  votesCasted < 3 ? true : false;
-		
 	}
 	
 	boolean doVote () {
