@@ -29,7 +29,7 @@ public class Poll {
 		}
 	}
 	
-	boolean castVote (int voterId, int candidateId ) {
+	public synchronized boolean castVote (int voterId, int candidateId ) {
 		if (storeData.getVoter(voterId) == null) {
 			storeData.setVoter(voterId);
 		}
@@ -42,7 +42,7 @@ public class Poll {
 		return false;
 	}
 		
-	List<Candidate> getResults () {
+	public List<Candidate> getResults () {
 		return storeData.getCandidates();
 	}
 }

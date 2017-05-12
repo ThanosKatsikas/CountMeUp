@@ -21,15 +21,15 @@ public class Voter {
 		votesCasted = 0;
 	}
 	
-	int getNumberOfVotes () {
+	public int getNumberOfVotes () {
 		return votesCasted;
 	}
 	
-	boolean canVote () {
+	public boolean canVote () {
 		return  votesCasted < 3 ? true : false;
 	}
 	
-	boolean doVote () {
+	public boolean doVote () {
 		if (canVote() ) {
 			votesCasted++;
 			return true;

@@ -26,11 +26,11 @@ public class Candidate {
 		numberOfVotes = 0;
 	}
 	
-	int getNumberOfVotes() {
+	public int getNumberOfVotes() {
 		return numberOfVotes;
 	}
 	
-	void addVote () {
+	public void addVote () {
 		numberOfVotes = numberOfVotes + 1;
 	}
 }
