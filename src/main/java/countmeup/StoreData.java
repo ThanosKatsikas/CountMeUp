@@ -1,12 +1,14 @@
 package countmeup;
 
-public interface StoreData {
-	
-	void setVoter(int voterId);
-	Voter getVoter(int voterId);
-	
-	void setCandidate (int candidateId);
-	Candidate getCandidate (int candidateId);
+import java.util.List;
 
+public interface StoreData{
 	
+	public void setVoter(int voterId);
+	public Voter getVoter(int voterId);
+	
+	public void setCandidate (int candidateId);
+	public Candidate getCandidate (int candidateId);
+
+	public List<Candidate> getCandidates();
 }

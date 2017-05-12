@@ -1,8 +1,10 @@
 package countmeup;
 
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 
-public class StoreDataRuntime implements StoreData {
+public class StoreDataRuntime implements StoreData{
 	
 	private final HashMap<Integer, Candidate> candidateMap;
 	private final HashMap<Integer, Voter> voterMap;
@@ -33,6 +35,15 @@ public class StoreDataRuntime implements StoreData {
 	public Candidate getCandidate(int candidateId) {
 		return candidateMap.get(candidateId);
 	}
-	
+	@Override
+	public  List <Candidate> getCandidates () {
+		List<Candidate> Candidates = new LinkedList<Candidate>();
+		
+		for (HashMap.Entry<Integer, Candidate> entry : candidateMap.entrySet()){
+			Candidates.add(entry.getValue());
+		}
+		return Candidates;
+	}
 
+	
 }

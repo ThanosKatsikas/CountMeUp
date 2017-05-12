@@ -19,41 +19,32 @@ import java.util.List;
  *  		getResults - Get's the results of the voting. 	
  */
 public class Poll {	
-	HashMap<Integer, Candidate> candidateMap;
-	HashMap<Integer, Voter> voterMap;
+	private final StoreData storeData;
 
 	
 	Poll() {
-		candidateMap = new HashMap<Integer,Candidate>();
-		voterMap =new HashMap<Integer,Voter>();
-		
+		storeData = new StoreDataRuntime();
+				
 		// Initialize four candidates
 		for (int i = 0; i< 4; i++) {
-			candidateMap.put(i, new Candidate(i));
+			storeData.setCandidate(i);
 		}
 	}
 	
 	boolean castVote (int voterId, int candidateId ) {
-		if (voterMap.get(voterId) == null) {
-			voterMap.put(voterId, new Voter(voterId));
+		if (storeData.getVoter(voterId) == null) {
+			storeData.setVoter(voterId);
 		}
-		if (voterMap.get(voterId).canVote() && candidateMap.get(candidateId) != null)
+		if (storeData.getVoter(voterId).canVote() && storeData.getCandidate(candidateId) != null)
 		{
-			voterMap.get(voterId).doVote();
-			candidateMap.get(candidateId).addVote();
+			storeData.getVoter(voterId).doVote();
+			storeData.getCandidate(candidateId).addVote();
 			return true;
 		}
 		return false;
 	}
 		
-	List<Result> getResults () {
-		List<Result> Results = new LinkedList<Result>();
-		
-		for (HashMap.Entry<Integer, Candidate> entry : candidateMap.entrySet())
-		{
-			Results.add(new Result(entry.getKey(), entry.getValue().getNumberOfVotes()));
-		    System.out.println(entry.getKey() + "/" + entry.getValue().getNumberOfVotes());
-		}
-		return Results;
+	List<Candidate> getResults () {
+		return storeData.getCandidates();
 	}
 }

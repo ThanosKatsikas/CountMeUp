@@ -24,7 +24,7 @@ public class CountMeUpServiceImpl implements CountMeUpService{
 	}
 
 	@Override
-	public List<Result> doResults() {
+	public List<Candidate> doResults() {
 		return poll.getResults();
 		
 	} 
