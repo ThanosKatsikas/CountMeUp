@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 public interface CountMeUpService {
 
 	ResponseEntity<Void> doVote(int voterId, int candidateId);
-	List<Result>  doResults ();
+	List<Candidate>  doResults ();
 	
 	
 }
