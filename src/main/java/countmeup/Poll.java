@@ -37,7 +37,7 @@ public class Poll {
 		if (voterMap.get(voterId) == null) {
 			voterMap.put(voterId, new Voter(voterId));
 		}
-		if (voterMap.get(voterId).canVote())
+		if (voterMap.get(voterId).canVote() && candidateMap.get(candidateId) != null)
 		{
 			voterMap.get(voterId).doVote();
 			candidateMap.get(candidateId).addVote();
