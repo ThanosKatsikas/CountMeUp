@@ -1,5 +1,7 @@
 package countmeup;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /* 
  * Class candidate
  * Attributes: 	
@@ -14,7 +16,9 @@ package countmeup;
  *   		addVote - Adds a vote to the candidate's votes
  */
 public class Candidate {
+	@JsonProperty
 	private final int candidateId;
+	@JsonProperty
 	private int numberOfVotes;
 	
 	Candidate (int id) {
