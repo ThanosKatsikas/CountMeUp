@@ -1,6 +1,9 @@
 package countmeup;
 
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,16 +30,15 @@ public class CountMeUpController {
     		@RequestParam(value="voter") int voter, 
     		@RequestParam(value="candidate") int candidate)
     {
-    	System.out.println("Hello!");
     	return countMeUpService.doVote(voter, candidate);
     }
     
     @RequestMapping(value = "/results", method=RequestMethod.GET)
-    public void results(
+    public List<Result> results(
     		@RequestParam(value="poll", defaultValue="1", required=false) int poll,
     		@RequestParam(value="candidate", defaultValue="0", required=false) int numberOfVotes)
     {
-    	
+    	return countMeUpService.doResults();
     }
 
 }

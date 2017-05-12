@@ -1,6 +1,8 @@
 package countmeup;
 
 
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +13,7 @@ import org.springframework.stereotype.Service;
 public interface CountMeUpService {
 
 	ResponseEntity<Void> doVote(int voterId, int candidateId);
-	void doResults ();
+	List<Result>  doResults ();
 	
 	
 }

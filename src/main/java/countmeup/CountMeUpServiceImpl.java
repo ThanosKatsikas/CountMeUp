@@ -1,5 +1,7 @@
 package countmeup;
 
+import java.util.List;
+
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,8 +24,9 @@ public class CountMeUpServiceImpl implements CountMeUpService{
 	}
 
 	@Override
-	public void doResults() {
-		// TODO Auto-generated method stub
+	public List<Result> doResults() {
+		return poll.getResults();
+		
 	} 
 
 
