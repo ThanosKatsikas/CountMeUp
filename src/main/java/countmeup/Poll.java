@@ -45,4 +45,8 @@ public class Poll {
 	public List<Candidate> getResults () {
 		return storeData.getCandidates();
 	}
+	
+	public StoreData getStoreData() {
+		return storeData;
+	}
 }

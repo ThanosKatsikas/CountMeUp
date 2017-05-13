@@ -41,4 +41,8 @@ public class Voter {
 	public void setVotes (int votesCasted) {
 		this.votesCasted = votesCasted;
 	}
+	
+	public int getVoterId () {
+		return voterId;
+	}
 }
