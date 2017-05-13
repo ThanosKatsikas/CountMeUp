@@ -37,4 +37,12 @@ public class Voter {
 		
 		return false;
 	}
+	
+	public void setVotes (int votesCasted) {
+		this.votesCasted = votesCasted;
+	}
+	
+	public int getVoterId () {
+		return voterId;
+	}
 }
