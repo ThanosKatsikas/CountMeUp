@@ -26,6 +26,8 @@
 
 
     <build>
+        <testSourceDirectory>src/main/java/countmeup/test/</testSourceDirectory>
+         
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
