@@ -8,27 +8,57 @@ import org.junit.Test;
 
 public class VoterTest {
 
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
+	Voter voter;
+	
+	/*
+	 * Initializes a voter object before tests
+	 */
 	@Before
-	public void setUp() throws Exception {
+	public void testPrep ()  throws Exception {
+		voter = new Voter(1);
 	}
-
+	
+	/*
+	 * Tests that the voter always has zero votes
+	 * when a new voter instance is created. 
+	 */
 	@Test
 	public void testGetNumberOfVotes() {
-		fail("Not yet implemented");
+		Voter voter = new Voter(1);
+			
+		assertEquals(0,voter.getNumberOfVotes());
 	}
 
+	/*
+	 * A voter can vote no more than three times
+	 * regardless of who he votes for.
+	 */
 	@Test
 	public void testCanVote() {
-		fail("Not yet implemented");
+		voter.setVotes(2);
+		// We should be able to vote if we have two votes.
+		assert(voter.canVote());
+		
+		
+		voter.setVotes(3);
+		// But we shouldn't if we have three. 
+		assert(!voter.canVote());
 	}
 
+	/*
+	 * Voting should increase the votes count by one
+	 */
 	@Test
 	public void testDoVote() {
-		fail("Not yet implemented");
+		Voter voter = new Voter(1);
+		voter.setVotes(2);
+
+		voter.doVote();
+		
+		assertEquals(voter.getNumberOfVotes(),3);
 	}
+
+	
+
 
 }
