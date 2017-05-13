@@ -3,7 +3,6 @@ package countmeup;
 import static org.junit.Assert.*;
 
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class VoterTest {
@@ -23,9 +22,7 @@ public class VoterTest {
 	 * when a new voter instance is created. 
 	 */
 	@Test
-	public void testGetNumberOfVotes() {
-		Voter voter = new Voter(1);
-			
+	public void testGetNumberOfVotes() {			
 		assertEquals(0,voter.getNumberOfVotes());
 	}
 
@@ -39,7 +36,6 @@ public class VoterTest {
 		// We should be able to vote if we have two votes.
 		assert(voter.canVote());
 		
-		
 		voter.setVotes(3);
 		// But we shouldn't if we have three. 
 		assert(!voter.canVote());
@@ -50,12 +46,9 @@ public class VoterTest {
 	 */
 	@Test
 	public void testDoVote() {
-		Voter voter = new Voter(1);
-		voter.setVotes(2);
-
 		voter.doVote();
 		
-		assertEquals(voter.getNumberOfVotes(),3);
+		assertEquals(voter.getNumberOfVotes(),1);
 	}
 
 	
