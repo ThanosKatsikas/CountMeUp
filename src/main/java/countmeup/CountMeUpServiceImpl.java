@@ -21,7 +21,7 @@ public class CountMeUpServiceImpl implements CountMeUpService{
 			return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
 		}
 		
-		return  new ResponseEntity<Void>(headers, HttpStatus.BAD_REQUEST);	
+		return  new ResponseEntity<Void>(headers, HttpStatus.FORBIDDEN);	
 	}
 
 	@Override

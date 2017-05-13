@@ -3,8 +3,17 @@ As a BBC television presenter
 I want to see the counts for candidates within a given time frame
 So that I can announce the winner of the competition
 
+
+Scenario: Count Me Up only accepts 3 votes per user
+Given I am count me up
+And I have received 3 votes for candidate 1 from voter 2
+When I receive a vote for candidate 1 from voter 2
+Then I return a 403 response
+And I do not register that vote
+
 Scenario: Count Me Up accepts a vote
 Given I am count me up
-When I receive a vote for candidate A from voter A
-And voter A has not voted before
+When voter 1 has not voted before
+And I receive a vote for candidate 1 from voter 1
 Then I register that vote and return a 201 response
+
