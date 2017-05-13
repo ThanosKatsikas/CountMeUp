@@ -2,7 +2,6 @@ package countmeup;
 
 import static org.junit.Assert.*;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -40,7 +39,7 @@ public class CountVotesSteps {
 	public void has_not_voted_yet(final int voterId) {
 		assertEquals(poll.getStoreData().getVoter(voterId), null);
 	}
-	
+	@Given("^I have received (\\d+) vote for candidate (\\d+) from voter (\\d+)$")
 	@And("^I have received (\\d+) votes for candidate (\\d+) from voter (\\d+)$")
 	public void have_received_X_votes_for(final int numberOfVotes, final int candidateId, final int voterId) {
 		for (int i = 0; i< numberOfVotes;i++) { 
