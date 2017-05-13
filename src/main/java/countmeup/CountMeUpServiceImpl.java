@@ -10,7 +10,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class CountMeUpServiceImpl implements CountMeUpService{
 	
-	private final Poll poll = new Poll();
+	// TODO: Add configuration class and yml file to load the number of Candidates
+	private final Poll poll = new Poll(4);
 	
 	@Override
 	public ResponseEntity<Void> doVote(int voterId, int candidateId) {

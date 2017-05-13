@@ -20,11 +20,11 @@ public class Poll {
 	private final StoreData storeData;
 
 	
-	Poll() {
+	Poll(int numberOfCandidates) {
 		storeData = new StoreDataRuntime();
 				
 		// Initialize four candidates
-		for (int i = 0; i< 4; i++) {
+		for (int i = 1; i<= numberOfCandidates; i++) {
 			storeData.setCandidate(i);
 		}
 	}
