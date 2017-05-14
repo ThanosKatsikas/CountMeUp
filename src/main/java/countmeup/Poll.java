@@ -23,16 +23,21 @@ public class Poll {
 	Poll(int numberOfCandidates) {
 		storeData = new StoreDataRuntime();
 				
-		// Initialize four candidates
+		// Initialize candidates.
 		for (int i = 1; i<= numberOfCandidates; i++) {
 			storeData.setCandidate(i);
 		}
 	}
 	
+	/* We want to ensure that casting a vote is atomic as there are
+	 * racing conditions with multiple threads checking if one can vote. 
+	 */
 	public synchronized boolean castVote (int voterId, int candidateId ) {
+		// If the voter doesn't exist in our storage, add him. 
 		if (storeData.getVoter(voterId) == null) {
 			storeData.setVoter(voterId);
 		}
+		//Check that the voter can vote and also that the candidate is valid.
 		if (storeData.getVoter(voterId).canVote() && storeData.getCandidate(candidateId) != null)
 		{
 			storeData.getVoter(voterId).doVote();
@@ -45,7 +50,7 @@ public class Poll {
 	public List<Candidate> getResults () {
 		return storeData.getCandidates();
 	}
-	
+	// Returns a way to access the storage.
 	public StoreData getStoreData() {
 		return storeData;
 	}

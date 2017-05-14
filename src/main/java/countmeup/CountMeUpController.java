@@ -34,9 +34,7 @@ public class CountMeUpController {
     }
     
     @RequestMapping(value = "/results", method=RequestMethod.GET)
-    public List<Candidate> results(
-    		@RequestParam(value="poll", defaultValue="1", required=false) int poll,
-    		@RequestParam(value="candidate", defaultValue="0", required=false) int numberOfVotes)
+    public List<Candidate> results()
     {
     	return countMeUpService.doResults();
     }
