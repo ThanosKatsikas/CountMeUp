@@ -1,5 +1,5 @@
 # CountMeUp ![Build Status](https://travis-ci.org/ThanosKatsikas/CountMeUp.svg?branch=master)
-A java application that accepts votes for candidates and returls the results.
+A java application that accepts votes for candidates and returns the results.
 
  The rules are:
 * Each Voter can vote 3 times.
@@ -29,7 +29,8 @@ curl -i -X GET localhost:8080/results
 ```
 
 ## Testing
-The application is unit tested and also runs cucumber scenarios found under resources. 
+The application is unit tested and also runs cucumber scenarios that can be found under resources. 
+To run tests:
 ```
 mvn clean test
 ```

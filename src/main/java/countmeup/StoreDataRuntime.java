@@ -4,6 +4,11 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
+/*
+ * Non persistent data storage during runtime. 
+ * We use a hashmap to store the voters and the candidates.
+ * We count each vote as it happens.
+ */
 public class StoreDataRuntime implements StoreData{
 	
 	private final HashMap<Integer, Candidate> candidateMap;
